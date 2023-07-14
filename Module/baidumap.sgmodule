@@ -1,0 +1,49 @@
+#!name=百度地图
+#!desc=🔗 [2023/7/14 08:24:50] RuCu6
+#!author = RuCu6
+#!update = 2023-07-14 23:28
+
+# 🔗 模块链接
+#SUBSCRIBED
+
+
+[Script]
+
+map_9 = type=http-response, pattern=^https:\/\/newclient\.map\.baidu\.com\/client\/imap\/dl\/s\/UpdateInfo\.php\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/map.js, timeout=60, script-update-interval=0
+
+# 我的页面
+map_14 = type=http-response, pattern=^https:\/\/newclient\.map\.baidu\.com\/client\/usersystem\/mine\/page\?, requires-body=true, max-size=3145728, script-path=https://raw.githubusercontent.com/RuCu6/QuanX/main/Scripts/baidu/map.js, timeout=60, script-update-interval=0
+
+[Map Local]
+
+# 组件包
+^https:\/\/newclient\.map\.baidu\.com\/client\/crossmarketing\/\?container=du_aide_module data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/newclient\.map\.baidu\.com\/client\/crossmarketing\/\?container=du_card_ugc data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/newclient\.map\.baidu\.com\/client\/crossmarketing\/\?container=du_trip_route_tab data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/newclient\.map\.baidu\.com\/client\/crossmarketing\/\?oem= data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 首页 小横条,左上角动图
+^https:\/\/newclient\.map\.baidu\.com\/client\/noticebar\/get\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/newclient\.map\.baidu\.com\/client\/phpui2\/\?qt=ads data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/newclient\.map\.baidu\.com\/grow-engine\/api\/common\/userHome\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+# 打车页
+^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/notice data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/activity\/talos\/activitycard\? data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/yongche\.baidu\.com\/gomarketing\/api\/popup\/getentrancecordovaurl data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+^https:\/\/yongche\.baidu\.com\/goorder\/passenger\/baseinfo data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+#Add
+^https:\/\/ugc\.map\.baidu\.com\/govui data="https://raw.githubusercontent.com/mieqq/mieqq/master/reject-dict.json"
+
+[MITM]
+
+hostname = %APPEND% newclient.map.baidu.com,yongche.baidu.com,ugc.map.baidu.com
